@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 const Navbar = () => {
   return (
     <div className="flex justify-between items-center py-4">
@@ -6,9 +8,10 @@ const Navbar = () => {
       </div>
       <nav>
         <ul className="flex justify-center items-center  gap-6">
-          <li className="text-[#23BE0A] font-bold border-2 border-[#23BE0A] p-2 rounded">Home</li>
-          <li>Listed Books</li>
-          <li>Pages to Read</li>
+          <li className="text-[#23BE0A] font-bold border-2 border-[#23BE0A] p-2 rounded"><NavLink to="/">Home</NavLink></li>
+          <li className="text-[#23BE0A] font-bold border-2 border-[#23BE0A] p-2 rounded"><NavLink to="/l">Listed Books</NavLink></li>
+          <li className="text-[#23BE0A] font-bold border-2 border-[#23BE0A] p-2 rounded"><NavLink to="/p">Pages to Read</NavLink></li>
+          
         </ul>
       </nav>
       <div className="flex justify-center items-center gap-3">
