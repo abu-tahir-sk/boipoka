@@ -15,8 +15,8 @@ const Books = ({ data }) => {
   //     });
   // }, []);
   return (
-    <div className="mt-20 mb-10 ">
-      <h2 className="font-bold text-4xl text-center playfair-display">Books</h2>
+    <div className="mt-20 mb-10">
+      <h2 className="font-bold text-[40px] text-center playfair-display mb-9">Books</h2>
       {/* <div>All Books: {allBooks.length}</div> */}
       <div className="grid grid-cols-3 gap-6">
         <Suspense fallback={<span>loading...</span>}>
