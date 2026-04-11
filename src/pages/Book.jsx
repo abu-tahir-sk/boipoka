@@ -1,9 +1,10 @@
 import Rating from "@mui/material/Rating";
+import { Link } from "react-router";
 
 const Book = ({ singleBook }) => {
-  const { image, bookName, author, category, rating, tags } = singleBook;
+  const { image, bookName, author, category, rating, tags,bookId } = singleBook;
   return (
-    <div className="border border-[#131313]/15 p-6 rounded-2xl flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white  shadow-md">
+    <Link to={`/book-details/${bookId}`} className="border border-[#131313]/15 p-6 rounded-2xl flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white  shadow-md">
       <div className="bg-gray-100 mb-6 rounded-2xl  ">
         <img
           className="w-[124px] p-4 h-[177px] rotate-x-15  -rotate-y-30 skew-3 rounded mx-auto"
@@ -32,7 +33,7 @@ const Book = ({ singleBook }) => {
           <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
