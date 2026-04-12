@@ -1,4 +1,4 @@
-import { Rating } from "@mui/material";
+
 import { useLoaderData, useParams } from "react-router";
 
 const BookDetails = () => {
@@ -85,7 +85,3 @@ const BookDetails = () => {
 };
 
 export default BookDetails;
-
- 
-       
-      
