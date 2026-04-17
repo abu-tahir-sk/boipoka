@@ -22,6 +22,10 @@ const BookDetails = () => {
     publisher,
   } = singleBook;
 
+  const handleRead = (id) => {
+    console.log(id)
+  }
+
   return (
     <div className=" flex justify-center gap-12  overflow-hidden bg-white mt-14">
       <div className="w-1/2 p-16 bg-[#131313]/5 rounded-lg ">
@@ -78,7 +82,7 @@ const BookDetails = () => {
     </tr>
   </tbody>
 </table>
-<div className="flex gap-8 mt-8"><button className="border border-gray-600/25 py-2 px-3 rounded-lg font-bold">Read</button> <button className="text-white bg-[#50B1C9] font-bold py-2 px-4 rounded-lg">Wishlist</button></div>
+<div className="flex gap-8 mt-8"><button className="border border-gray-600/25 py-2 px-3 rounded-lg font-bold" onClick={()=>handleRead(id)}>Read</button> <button className="text-white bg-[#50B1C9] font-bold py-2 px-4 rounded-lg">Wishlist</button></div>
       </div>
     </div>
   );
