@@ -38,6 +38,15 @@ const Navbar = () => {
               Listed Books
             </NavLink>
           </li>
+          <li>
+            <NavLink className={({ isActive }) =>
+                isActive
+                  ? "text-[#23BE0A] font-semibold border bg-[#23BE0A]/3 border-[#23BE0A] p-2 rounded"
+                  : "text-[#131313]/80 text-[18px] "
+              } to="/read-list">
+             Stored Books
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <div className="flex justify-center items-center gap-3">

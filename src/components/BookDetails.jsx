@@ -1,5 +1,7 @@
 
 import { useLoaderData, useParams } from "react-router";
+import { addStoredDB } from "../Utility/AddToDB";
+
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -24,6 +26,7 @@ const BookDetails = () => {
 
   const handleRead = (id) => {
     console.log(id)
+    addStoredDB(id)
   }
 
   return (
