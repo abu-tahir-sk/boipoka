@@ -8,6 +8,16 @@ const getStoredBook = () => {
   }
 };
 
+const getStoredWishList = () => {
+  const storedBookSTR = localStorage.getItem("wishList");
+  if (storedBookSTR) {
+    const storedBookData = JSON.parse(storedBookSTR);
+    return storedBookData;
+  } else {
+    return [];
+  }
+};
+
 const addStoredDB = (id) => {
   const storedBookData = getStoredBook();
   if (storedBookData.includes(id)) {
@@ -18,4 +28,15 @@ const addStoredDB = (id) => {
     localStorage.setItem("readList", data);
   }
 };
-export  {addStoredDB,getStoredBook};
+
+const addWishListDB = (id) => {
+  const storedBookData = getStoredWishList();
+  if (storedBookData.includes(id)) {
+    alert("alresdy save to wish");
+  } else {
+    storedBookData.push(id);
+    const data = JSON.stringify(storedBookData);
+    localStorage.setItem("wishList", data);
+  }
+};
+export { addStoredDB, getStoredBook, getStoredWishList, addWishListDB };
