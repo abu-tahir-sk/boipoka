@@ -17,29 +17,31 @@ const ReadList = () => {
   );
 
    const [sortBy, setSortBy] = useState(null);
-    const cities = [
-        { name: 'New York', },
-        { name: 'Rome', },
-       
-    ];
+    const sortOptions = [
+  { name: "Rating", value: "rating" },
+  { name: "Pages", value: "totalPages" },
+];
+   
 
   return <div>
      <div className="bg-gray-600/5 py-4 rounded">
        <h2 className="font-bold text-4xl text-center">Books </h2>
      </div>
      <div className="text-center py-4">
-      <button className="text-white bg-[#23BE0A] py-3 px-4 rounded-md font-bold"><Dropdown value={sortBy} onChange={(e) => setSortBy(e.value)} options={cities} optionLabel="name" 
-    placeholder="Sort By" className="gap-4 " /></button>
+      <Dropdown value={sortBy} onChange={(e) => setSortBy(e.value)} options={sortOptions} optionLabel="name" 
+    placeholder="Sort By" className="gap-4 text-white bg-[#23BE0A] py-3 px-4 rounded-md font-bold" />
          </div>
       Read List:{readList.length}
       <Tabs>
     <TabList>
-      <Tab>Title 1</Tab>
-      <Tab>Title 2</Tab>
+      <Tab>Read List</Tab>
+      <Tab>Wishlist</Tab>
     </TabList>
 
     <TabPanel>
-      <h2>Any content 1</h2>
+      <h2> {readList.map(read=><div key={read.bookId}>
+        <img src={read.image} alt="" />
+      </div>)}</h2>
     </TabPanel>
     <TabPanel>
       <h2>Any content 2</h2>
