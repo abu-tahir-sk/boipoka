@@ -23,11 +23,30 @@ const ReadList = () => {
   );
 
   const [sortBy, setSortBy] = useState(null);
+  const [sortedReadList, setSortedReadList] = useState(readList);
+const [sortedWishList, setSortedWishList] = useState(wishList);
   const sortOptions = [
     { name: "Rating", value: "rating" },
     { name: "Pages", value: "totalPages" },
   ];
 
+const handleSort = (type) => {
+  let sortedRead = [...readList];
+  let sortedWish = [...wishList];
+
+  if (type === "rating") {
+    sortedRead.sort((a, b) => b.rating - a.rating);
+    sortedWish.sort((a, b) => b.rating - a.rating);
+  }
+
+  if (type === "totalPages") {
+    sortedRead.sort((a, b) => b.totalPages - a.totalPages);
+    sortedWish.sort((a, b) => b.totalPages - a.totalPages);
+  }
+
+  setSortedReadList(sortedRead);
+  setSortedWishList(sortedWish);
+};
   return (
     <div>
       <div className="bg-gray-600/5 py-4 rounded">
@@ -36,8 +55,12 @@ const ReadList = () => {
       <div className="text-center py-4">
         <Dropdown
           value={sortBy}
-          onChange={(e) => setSortBy(e.value)}
+         onChange={(e) => {
+    setSortBy(e.value);
+    handleSort(e.value);
+  }}
           options={sortOptions}
+          onSelect={handleSort}
           optionLabel="name"
           placeholder="Sort By"
           className="gap-4 text-white bg-[#23BE0A] py-3 px-4 rounded-md font-bold"

@@ -7,11 +7,11 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="flex justify-between items-center py-4">
-      <div className="flex items-center md:block">
+    <div className="flex justify-between items-center py-4 w-11/12 mx-auto">
+      <div className="flex items-center gap-3 md:block">
         <div onClick={()=>setIsMenuOpen(!isMenuOpen)} className=" md:hidden text-3xl cursor-pointer">{
           isMenuOpen ? <MdClose /> : <AiOutlineMenuFold />}</div>
-        <h2 className="text-[26px]  font-bold">Books Vibe</h2>
+        <h2 className="text-[20px] md:text-[26px]  font-bold">Books Vibe</h2>
       </div>
       <nav>
         <ul className={`md:flex justify-center items-center  gap-6 absolute md:static bg-white w-full left-0 py-4 md:py-0 transition-all duration-300 ${isMenuOpen ? "top-[60px]" : "top-[-200px]"}`}>
@@ -59,7 +59,7 @@ const Navbar = () => {
       <div className="flex justify-center items-center gap-3">
         <button className="bg-[#23BE0A] hover:bg-green-600  py-2   font-semibold rounded-lg shadow-md 
    text-white 
-  px-4 
+  px-3 md:px-4 
    focus:outline-none  
   active:translate-y-px
   ">
@@ -67,7 +67,7 @@ const Navbar = () => {
         </button>{" "}
         <button className="bg-[#59C6D2] hover:bg-cyan-500  py-2  rounded font-semibold shadow-md 
    text-white 
-  px-4 
+  px-3 md:px-4 
    focus:outline-none  
   active:translate-y-px">
           Sign Up

@@ -18,7 +18,7 @@ const Books = ({ data }) => {
     <div className="mt-20 mb-10">
       <h2 className="font-bold text-[40px] text-center playfair-display mb-9">Books</h2>
       {/* <div>All Books: {allBooks.length}</div> */}
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Suspense fallback={<span>loading...</span>}>
           {data.map((singleBook) => (
             <Book singleBook={singleBook} key={singleBook.bookId} />
