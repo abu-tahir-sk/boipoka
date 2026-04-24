@@ -36,22 +36,14 @@ const Navbar = () => {
               Pages to Read
             </NavLink>
           </li>
-          <li>
-            <NavLink className={({ isActive }) =>
-                isActive
-                  ? "text-[#23BE0A] font-semibold  md:border bg-[#23BE0A]/3 border-[#23BE0A] p-2 rounded block md:flex"
-                  : "text-[#131313]/80 text-[18px] "
-              } to="/listed-books">
-              Listed Books
-            </NavLink>
-          </li>
+         
           <li>
             <NavLink className={({ isActive }) =>
                 isActive
                   ? "text-[#23BE0A] font-semibold  md:border bg-[#23BE0A]/3 border-[#23BE0A] p-2 rounded block md:flex"
                   : "text-[#131313]/80 text-[18px] "
               } to="/read-list">
-             Stored Books
+             List Books
             </NavLink>
           </li>
         </ul>

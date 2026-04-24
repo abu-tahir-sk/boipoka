@@ -13,12 +13,12 @@ const ReadList = () => {
 
   const storedBookData = getStoredBook();
   const convertStoredBook = storedBookData.map((id) => parseInt(id, 10));
-  const readList = data.filter((book) =>
+  const readList = data.filter((book) => // read 
     convertStoredBook.includes(book.bookId),
   );
   const storedWishList = getStoredWishList();
   const convertStoredWishList = storedWishList.map((id) => parseInt(id, 10));
-  const wishList = data.filter((book) =>
+  const wishList = data.filter((book) => // wish
     convertStoredWishList.includes(book.bookId),
   );
 
@@ -75,7 +75,7 @@ const handleSort = (type) => {
 
         <TabPanel>
         
-            {readList.map((read) => (
+            {sortedReadList.map((read) => (
               <ReadList1 key={read.bookId} read={read}></ReadList1>
             ))}
           
@@ -83,7 +83,7 @@ const handleSort = (type) => {
         <TabPanel>
         
            
-            {wishList.map((wish) => (
+            {sortedWishList.map((wish) => (
               <WishList1 key={wish.bookId} wish={wish}></WishList1>
             ))}
          
